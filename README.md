@@ -32,9 +32,12 @@ Assuming you have already [installed LangGraph Studio](https://github.com/langch
 cp .env.example .env
 ```
 
-2. Define required API keys in your `.env` file.
+2. Define required API keys in your `.env` file if you plan to enable additional tools.
 
-The primary [search tool](./src/react_agent/tools.py) [^1] used is [Tavily](https://tavily.com/). Create an API key [here](https://app.tavily.com/sign-in).
+> Note: The general Tavily web search tool is disabled by default. If you choose to restore it, set a Tavily API key and add the tool back to `TOOLS`.
+
+We include a sample job listing tool that queries [104 人力銀行](https://www.104.com.tw/). It works without an API key and returns the first page of search results for a given keyword.
+Try prompts like `幫我找 Python 的職缺` or `列出台北資料工程師工作 page=2` to have the agent call this tool.
 
 ### Setup Model
 
