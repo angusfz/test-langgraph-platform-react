@@ -74,6 +74,7 @@ OPENAI_API_KEY=your-api-key
 1. **Add new tools**: Extend the agent's capabilities by adding new tools in [tools.py](./src/react_agent/tools.py). These can be any Python functions that perform specific tasks.
 2. **Select a different model**: We default to Anthropic's Claude 3 Sonnet. You can select a compatible chat model using `provider/model-name` via runtime context. Example: `openai/gpt-4-turbo-preview`.
 3. **Customize the prompt**: We provide a default system prompt in [prompts.py](./src/react_agent/prompts.py). You can easily update this via context in the studio.
+   - By default, the prompt instructs the agent to respond in Traditional Chinese.
 
 You can also quickly extend this template by:
 
@@ -91,3 +92,20 @@ You can find the latest (under construction) docs on [LangGraph](https://github.
 LangGraph Studio also integrates with [LangSmith](https://smith.langchain.com/) for more in-depth tracing and collaboration with teammates.
 
 [^1]: https://python.langchain.com/docs/concepts/#tools
+
+Prepare local devlope env
+```bash
+$ python3.13 -m venv .venv
+$ source .venv/bin/activate
+$ pip install . --group dev
+$ langraph dev
+```
+
+langgraph cl
+```
+# build dockerfile
+$ langgraph build --tag 0.0.1
+
+# gen Dockerfile
+$ langgraph dockerfile Dockerfile.gen 
+```
